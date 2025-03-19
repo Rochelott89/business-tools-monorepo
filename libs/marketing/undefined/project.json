@@ -1,0 +1,36 @@
+{
+  "name": "social-media-dashboard",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/marketing/undefined/src",
+  "prefix": "bt-libs-undefined",
+  "projectType": "library",
+  "tags": ["domain:marketing", "type:undefined"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/marketing/undefined/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/marketing/undefined/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/marketing/undefined/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/marketing/undefined/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
