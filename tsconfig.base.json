@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
-  },
-  "exclude": ["node_modules", "tmp"]
+    "exclude": ["node_modules", "tmp"],
+    "paths": {
+      "@business-tools/workspace-generators-plugin": ["libs/src/index.ts"]
+    }
+  }
 }

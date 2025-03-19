@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "generate-angular-library": {
+      "factory": ".//workspace-generators-plugin",
+      "schema": ".//schema.json",
+      "description": "generate-angular-library generator"
+    }
+  }
+}
