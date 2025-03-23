@@ -71,18 +71,20 @@
         "ciTargetName": "e2e-ci"
       }
     },
-
     {
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "lint"
       }
     },
-
     {
-      "plugin": "@nx/eslint/plugin",
+      "plugin": "@business-tools/workspace-generators-plugin",
+      "options": {}
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
       "options": {
-        "targetName": "lint"
+        "targetName": "e2e"
       }
     }
   ],
@@ -100,12 +102,10 @@
     "@nx/angular:component": {
       "style": "scss"
     },
-    
     "@business-tools/workspace-generators-plugin": {
-    "path": "libs/workspace-generators-plugin"
-  },
-  
-  "@business-tools/workspace-generators-plugin:generate-angular-application": {
+      "path": "libs/workspace-generators-plugin"
+    },
+    "@business-tools/workspace-generators-plugin:generate-angular-application": {
       "path": "libs/workspace-generators-plugin/dist/libs/workspace-generators-plugin/generators/generate-angular-application"
     }
   }
