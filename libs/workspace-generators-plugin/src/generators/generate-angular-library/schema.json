@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/schema",
+  "$schema": "http://json-schema.org/schema",
   "$id": "GenerateAngularLibrary",
   "title": "",
   "type": "object",
@@ -25,7 +25,20 @@
         "type": "list",
         "items": ["finance", "hr", "marketing", "inventory", "shared"]
       }
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of the library",
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": {
+        "message": "What type is this library?",
+        "type": "list",
+        "items": ["ui", "data-access", "feature", "util", "all"]
+      }
     }
   },
-  "required": ["name"]
+  "required": ["name", "domain", "type"]
 }
