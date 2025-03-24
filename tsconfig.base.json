@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "exclude": ["node_modules", "tmp"],
+   
     "paths": {
       "@bt-libs/finance/undefined/expenses-registration": [
         "libs/finance/undefined/src/index.ts"
@@ -22,7 +22,8 @@
       "@bt-libs/marketing/undefined/social-media-dashboard": [
         "libs/marketing/undefined/src/index.ts"
       ],
-      "@business-tools/workspace-generators-plugin": ["libs/src/index.ts"]
+      "@business-tools/workspace-generators-plugin": ["libs/workspace-generators-plugin/src/index.ts"]
     }
-  }
+  },
+  "exclude": ["node_modules", "tmp"],
 }

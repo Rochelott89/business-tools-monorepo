@@ -3,18 +3,18 @@
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "finance/src",
+  "sourceRoot": "apps/finance/expenses-registration/src",
   "tags": ["domain:finance", "type:app"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/finance",
-        "index": "finance/src/index.html",
-        "browser": "finance/src/main.ts",
+        "outputPath": "dist/apps/finance/expenses-registration",
+        "index": "apps/finance/expenses-registration/src/index.html",
+        "browser": "apps/finance/expenses-registration/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "finance/tsconfig.app.json",
+        "tsConfig": "apps/finance/expenses-registration/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
@@ -22,7 +22,7 @@
             "input": "finance/public"
           }
         ],
-        "styles": ["finance/src/styles.scss"],
+        "styles": ["apps/finance/expenses-registration/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
