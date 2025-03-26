@@ -10,8 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 
-
-export class ExpensesApprovalPageComponent {
+//default marks a lazy load component, part of standalone for lazy-load routes
+export default class ExpensesApprovalPageComponent {
 
   pageTitle: string = 'Expenses Approval';
 
@@ -23,6 +23,13 @@ export class ExpensesApprovalPageComponent {
   // Method that will be called when a button is clicked
   navigateToDetails() {
     this.router.navigate(['/expenses-overview']); // Navigate to expenses-overview route
+  }
+  
+  //router outlet, to just call the sidebar of expenses-overview
+  navigateToDetailsList() {
+
+  this.router.navigate([{ outlets: { sidebar: 'list' } }]);
+
   }
 
   ngOnInit(){

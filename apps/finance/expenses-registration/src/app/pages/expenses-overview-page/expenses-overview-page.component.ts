@@ -7,4 +7,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './expenses-overview-page.component.html',
   styleUrl: './expenses-overview-page.component.scss',
 })
-export class ExpensesOverviewPageComponent {}
+export default class ExpensesOverviewPageComponent {
+
+  
+}

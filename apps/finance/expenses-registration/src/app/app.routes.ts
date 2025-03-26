@@ -1,6 +1,4 @@
 import { ActivatedRouteSnapshot, ResolveFn, Route } from '@angular/router';
-import { ExpensesOverviewPageComponent } from './pages/expenses-overview-page/expenses-overview-page.component';
-import { ExpensesApprovalPageComponent } from './pages/expenses-approval-page/expenses-approval-page.component';
 
 export const titleResolver: ResolveFn<string> =
     (route: ActivatedRouteSnapshot) =>
@@ -8,17 +6,35 @@ export const titleResolver: ResolveFn<string> =
 
 
 export const appRoutes: Route[] = [
+
+    //redirect route
+    { 
+        path: '', 
+        pathMatch: 'full', 
+        redirectTo: '/expenses-overview' 
+    },
+
+    //fallback route, TODO
+    //{ path: '**', component: NotFoundComponent },
+
+    {
+        path: 'expenses-approval',
+        loadComponent: () => import('./pages/expenses-approval-page/expenses-approval-page.component'),
+        title: titleResolver
+      },
+
     { 
 
         path: 'expenses-overview', 
-        component: ExpensesOverviewPageComponent,
-        title : titleResolver //using titleResolver for dinamic title
-    },
-    { 
-        path: 'expenses-approval', 
-        component: ExpensesApprovalPageComponent,
-        title : titleResolver
+        loadComponent: () => import('./pages/expenses-overview-page/expenses-overview-page.component'),
+        title : titleResolver, //using titleResolver for dinamic title
+        children: [
+            {   
+                //router outlet path to load a specific part of the page
+                path: 'list',
+                loadComponent: () => import('./pages/expenses-overview-page/expenses-overview-page.component'),
+                outlet: 'sidebar'  // load component in the named outlet 'sidebar'
+            }
+        ]
     }
-
-
 ];
