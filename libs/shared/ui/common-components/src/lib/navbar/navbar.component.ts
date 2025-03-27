@@ -12,6 +12,11 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
 
+
+  //Receive -> data as @Input 
+  //navbar with a predefined route (Home), and the capacity to add more items to the bar (...items on addHome())
+  //see apps\finance\expenses-registration\src\app\app.component.html and app.component.ts for an example
+ //this is a getter setter way introduced on Angular 16 (transform), see page 74
   @Input({ transform: addHome, required: true }) navbarItems: NavbarItem[] = [];
 
 }

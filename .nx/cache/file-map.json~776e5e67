@@ -588,7 +588,7 @@
       },
       {
         "file": "libs/shared/ui/common-components/src/lib/navbar/navbar.component.ts",
-        "hash": "6121744822307673041",
+        "hash": "7665280713556088095",
         "deps": [
           "npm:@angular/core",
           "npm:@angular/common",
