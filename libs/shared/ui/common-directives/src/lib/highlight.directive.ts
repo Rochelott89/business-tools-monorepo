@@ -2,7 +2,9 @@ import { Directive, ElementRef, inject, OnInit, Input, HostListener } from '@ang
 
 
 @Directive({
+
   selector: '[btLibsUiHighlight]', //selector to be used in the destination html
+  //selector: 'span, [btLibsUiHighlight]', //change to use directive selectors to all span's + marking [btLibsUiHighlight]
   standalone: true,
 })
 export class HighlightDirective implements OnInit {
