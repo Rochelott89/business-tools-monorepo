@@ -1,1 +1,8 @@
-<p>add-expense works!</p>
+<form #addExpenseForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+        <label for="description">Description:</label>
+        <input [(ngModel)]="expenseToAdd.description" type="text" id="description" name="description">
+    </div>
+    <fieldset ngModelGroup="amount"></fieldset>
+    <button type="submit">Submit</button>
+</form>
